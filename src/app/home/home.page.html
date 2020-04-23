@@ -1,0 +1,41 @@
+<ion-content color='primary' >
+
+  <ion-grid>
+    <form [formGroup]='myForm'>
+      <ion-row color='primary' justify-content-center>
+        <div text-center>
+          <h3>Login</h3>
+        </div>
+        <div >
+          <ion-item>
+            <ion-label color="primary" class="label">Ingrese nombre</ion-label>
+            <ion-input formControlName= 'name' required type="text" ></ion-input>
+           
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" class="label">Ingrese curp</ion-label>
+            <ion-input formControlName= 'curp' type="text" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" class="label">Ingrese No.Control</ion-label>
+            <ion-input formControlName= 'controlnumber' type="text" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" class="label">Ingrese edad</ion-label>
+            <ion-input formControlName= 'age'  required type="number" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Activo</ion-label>
+              <ion-toggle formControlName = 'active' color = 'secondary'> </ion-toggle>
+          </ion-item>
+        </div>
+        <div padding>
+          <ion-button size= 'large' type = 'button' [disabled] = '!myForm.valid'
+          (click) = 'create()' expand = 'block'>
+           Guardar
+          </ion-button>
+        </div>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>
